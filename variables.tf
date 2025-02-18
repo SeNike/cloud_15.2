@@ -40,3 +40,20 @@ variable "student_name" {
   default = "nikiforov"
 }
 
+variable "vm_cores" {
+  type = number
+  default = 2
+  description = "Processor cores"
+}
+
+variable "vm_memory" {
+  type = number
+  default = 4
+  description = "Memory"
+}
+
+variable "scale_count" {
+  type = number
+  default = 4
+  description = "Scale count"
+}

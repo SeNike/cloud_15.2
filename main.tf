@@ -64,8 +64,8 @@ resource "yandex_compute_instance_group" "lamp_group" {
   instance_template {
     platform_id = "standard-v3"
     resources {
-      cores  = 2
-      memory = 2
+      cores  = var.vm_cores
+      memory = var.vm_memory
     }
    
     # Использование LAMP образа
@@ -96,7 +96,7 @@ resource "yandex_compute_instance_group" "lamp_group" {
   # Настройки масштабирования
   scale_policy {
     fixed_scale {
-      size = 3
+      size = var.scale_count
     }
   }
   # Зоны доступности для размещения ресурсов
