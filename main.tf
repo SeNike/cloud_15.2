@@ -33,9 +33,9 @@ resource "yandex_vpc_network" "network" {
 
 resource "yandex_vpc_subnet" "subnet" {
   name           = "public-subnet"
-  zone           = "ru-central1-a"
+  zone           = var.default_zone
   network_id     = yandex_vpc_network.network.id
-  v4_cidr_blocks = ["192.168.10.0/24"]
+  v4_cidr_blocks = var.default_cidr
 }
 
 # Security Group для веб-серверов
@@ -101,7 +101,7 @@ resource "yandex_compute_instance_group" "lamp_group" {
   }
   # Зоны доступности для размещения ресурсов
   allocation_policy {
-    zones = ["ru-central1-a"]
+    zones = [var.default_zone]
   }
 
   # Стратегия развертывания, обновления и масштабирования ресурсов

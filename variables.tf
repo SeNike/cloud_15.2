@@ -19,17 +19,12 @@ variable "default_zone" {
   default     = "ru-central1-a"
   description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
 }
-variable "first_cidr" {
+variable "default_cidr" {
   type        = list(string)
   default     = ["192.168.10.0/24"]
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
 
-variable "second_cidr" {
-  type        = list(string)
-  default     = ["192.168.20.0/24"]
-  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
-}
 
 variable "service_account_id" {
   type        = string
