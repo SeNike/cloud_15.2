@@ -54,6 +54,6 @@ variable "vm_memory" {
 
 variable "scale_count" {
   type = number
-  default = 4
+  default = 3
   description = "Scale count"
 }
